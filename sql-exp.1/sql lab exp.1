@@ -1,0 +1,21 @@
+create table student (
+	sno int  AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(50) NOT NULL,
+	dept VARCHAR(20) NOT NULL,
+	marks INT  NOT NULL
+);
+ALTER TABLE student ADD COLUMN age INT NOT NULL;
+
+insert into student(sno,name,dept,marks,age) values (1,"abin","cs",35,21);
+insert into student(sno,name,dept,marks,age) values (2,"alen","cs",40,23);
+select * from student;
+
+
+ALTER TABLE student MODIFY COLUMN dept VARCHAR(70); 
+ALTER TABLE student DROP COLUMN marks;
+select * from student;
+
+RENAME TABLE student TO students;
+TRUNCATE TABLE students;
+DROP TABLE students;
+
