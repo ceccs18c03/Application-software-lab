@@ -1,0 +1,47 @@
+#Question
+
+#Create and insert values for the following tables department and instructor(with constraints)
+#a.	Department table
+#Code(primary key)
+#Title 
+#Dept_name(unique)
+#Dept_id
+#Salary(check –salary>2000)
+#b.	Instructor table
+#Name(not null)
+#Code
+#Id(default)
+
+
+
+
+
+
+CODE
+
+
+CREATE TABLE DEPARTMENT(
+    `code` INT PRIMARY KEY NOT NULL,
+    `dept_name` VARCHAR(30) UNIQUE NOT NULL,
+    `title` VARCHAR(30),
+    `dept_id` INT UNIQUE NOT NULL,
+    `salary` INT,
+    CHECK (`salary` > 2000 )
+);
+
+INSERT INTO DEPARTMENT(`code`,  `dept_name`, `title`, `dept_id`,`salary`) 
+VALUES (1, "Computer Science", "course1", 100, 20000),
+       (2, "Mechanical", "course2", 101, 25000);
+
+
+CREATE TABLE INSTRUCTOR(
+    `name` VARCHAR(50) NOT NULL,
+    `code` INT NOT NULL,
+    `id` INT PRIMARY KEY DEFAULT 1
+);
+
+INSERT INTO INSTRUCTOR(`name`, `code`)
+VALUES ("MSD", 7);
+SELECT * FROM DEPARTMENT;
+SELECT * FROM INSTRUCTOR;
+
